@@ -1,6 +1,6 @@
 databases:
   - name: hello-world-db
-    plan: starter
+    plan: free
     databaseName: helloworld
     user: hellouser
 
@@ -8,7 +8,6 @@ services:
   - type: web
     name: hello-backend
     runtime: python
-    plan: starter
     buildCommand: pip install --upgrade pip && pip install -r backend/requirements.txt
     startCommand: sh -c "uvicorn backend.app.main:app --host 0.0.0.0 --port $PORT"
     envVars:
@@ -23,7 +22,6 @@ services:
   - type: web
     name: hello-frontend
     runtime: static
-    plan: starter
     buildCommand: bash -c "cd frontend && npm install && npm run build"
     staticPublishPath: ./frontend/dist
     envVars:
