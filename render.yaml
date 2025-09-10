@@ -1,6 +1,6 @@
 databases:
   - name: hello-world-db
-    plan: free
+    plan: starter
     databaseName: helloworld
     user: hellouser
 
@@ -23,7 +23,7 @@ services:
   - type: web
     name: hello-frontend
     runtime: static
-    plan: free
+    plan: starter
     buildCommand: bash -c "cd frontend && npm install && npm run build"
     staticPublishPath: ./frontend/dist
     envVars:
