@@ -23,7 +23,7 @@ services:
   - type: web
     name: hello-frontend
     runtime: static
-    plan: starter
+    plan: free
     buildCommand: bash -c "cd frontend && npm install && npm run build"
     staticPublishPath: ./frontend/dist
     envVars:
